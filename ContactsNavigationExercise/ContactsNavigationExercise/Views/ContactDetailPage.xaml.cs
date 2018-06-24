@@ -13,7 +13,7 @@ namespace ContactsNavigationExercise.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ContactDetailPage : ContentPage
 	{
-
+        //Controladores de eventos para conocer en ContactsPage si se ha actualizado o añadido un contacto nuevo.
         public event EventHandler<Contact> ContactAdded;
         public event EventHandler<Contact> ContactUpdated;
 
