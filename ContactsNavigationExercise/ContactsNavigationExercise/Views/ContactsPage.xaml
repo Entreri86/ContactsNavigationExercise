@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactsNavigationExercise.Models.ContactsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="ToolBarBtn" Text="Add" Clicked="OnAddContact"/>
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="ContactsListView" ItemSelected="OnSelectedContact">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding FullName}"><!--Binding del metodo FullName de Contact-->
+                    <TextCell.ContextActions>
+                        <MenuItem IsDestructive="True" Clicked="OnDeleteContact" CommandParameter="{Binding .}"/>
+                        <!--IsDestructive para el DELETE, CommandParameter para hacer Binding con el contacto de la fila al eliminar, que lo elimine por completo de la lista-->
+                    </TextCell.ContextActions>
+                </TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
